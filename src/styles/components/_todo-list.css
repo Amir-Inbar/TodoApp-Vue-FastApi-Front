@@ -1,0 +1,10 @@
+.todo-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.todo-list .todo-preview .custom-todod {
+  align-items: flex-start;
+}
+.todo-list .todo-preview .custom-todod header {
+  font-size: 1em;
+}
