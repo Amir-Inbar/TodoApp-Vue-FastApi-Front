@@ -1,4 +1,4 @@
-# Logs
+heroku git:remote -a todoapp-python-fastapi# Logs
 logs
 *.log
 npm-debug.log*
