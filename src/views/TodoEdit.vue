@@ -31,7 +31,7 @@
         />
       </div>
       <div class="btn-group">
-        <button @click="saveTodo" class="btn btn-info" type="submit">save</button>
+        <button class="btn btn-info" type="submit">save</button>
         <button @click="goBack" class="btn btn-danger-text">go back</button>
       </div>
     </form>
@@ -58,6 +58,7 @@ export default {
       this.$router.push('/todo')
     },
     async saveTodo() {
+      console.log(this.todoToEdit)
       await this.$store.dispatch({type: 'saveTodo', todo: this.todoToEdit})
       await this.$router.push('/todo')
     },
