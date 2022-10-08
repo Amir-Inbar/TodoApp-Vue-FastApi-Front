@@ -1,12 +1,6 @@
-import {storageService} from './storage-service.js'
 import axios from "axios";
 
-const baseUrl = "https://todoapp-fastapi-backend.herokuapp.com/"
-
-
-
-
-
+const baseUrl = import.meta.env.MODE === 'development' ? 'http://localhost:8000/' : import.meta.env.VITE_APP_API_CALL
 export const todoService = {
     query,
     getById,
@@ -19,7 +13,6 @@ export const todoService = {
 
 async function query() {
     const {data: todos} = await axios.get(`${baseUrl}todo/`)
-    console.log(todos)
     return todos
 }
 
@@ -35,13 +28,11 @@ async function remove(todoId) {
 
 async function save(todo) {
     const {data: savedTodo} = await axios.post(`${baseUrl}todo/`, todo)
-    console.log(savedTodo)
     return savedTodo
 }
 
 async function update(todo) {
     const {data: updatedTodo} = await axios.put(`${baseUrl}todo/${todo.id}`, todo)
-    console.log(updatedTodo)
     return updatedTodo
 }
 
@@ -51,6 +42,6 @@ function getEmptyTodo() {
         description: null,
         doneAt: null,
         status: null,
-        createdAt:Date.now()
+        createdAt: Date.now()
     }
 }
