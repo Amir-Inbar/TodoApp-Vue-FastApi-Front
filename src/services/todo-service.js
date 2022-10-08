@@ -1,7 +1,6 @@
 import {storageService} from './storage-service.js'
 import axios from "axios";
 
-const KEY = 'todos_db'
 const baseUrl = "https://todoapp-fastapi-backend.herokuapp.com/"
 
 
