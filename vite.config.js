@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: 'TodoApp-Vue-FastApi-Front/',
+  base: '/TodoApp-Vue-FastApi-Front/',
   plugins: [vue()],
   resolve: {
     alias: {
