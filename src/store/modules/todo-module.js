@@ -18,7 +18,6 @@ export default {
             state.todos.splice(idx, 1)
         },
         saveTodo(state, {todo}) {
-            console.log(todo)
             const idx = state.todos.findIndex((t) => t.id === todo.id)
             if (idx !== -1) state.todos.splice(idx, 1, todo)
             else state.todos.unshift(todo)
@@ -55,7 +54,6 @@ export default {
             }
         },
         async doneTodo({commit}, {todo}) {
-            console.log(todo)
             const updatedTodo = JSON.parse(JSON.stringify(todo))
             updatedTodo.doneAt = Date.now()
             updatedTodo.status = 'done'
