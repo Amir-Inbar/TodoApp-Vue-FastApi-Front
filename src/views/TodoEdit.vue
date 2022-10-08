@@ -58,7 +58,6 @@ export default {
       this.$router.push('/todo')
     },
     async saveTodo() {
-      console.log(this.todoToEdit)
       await this.$store.dispatch({type: 'saveTodo', todo: this.todoToEdit})
       await this.$router.push('/todo')
     },
